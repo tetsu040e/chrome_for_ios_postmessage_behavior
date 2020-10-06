@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>site1.tetsu.io</title>
+    <meta charset="utf-8">
+    <meta name="description" content="site1.tetsu.io">
+    <meta name="author" content="tetsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <p>parent page</p>
+    <iframe src="https://site2.tetsu.io" id="iframe"></iframe>
+    <button id="button">postMessage</button>
+    <script>
+      $(function() {
+        $('#button').on('click', function(event) {
+          $('#iframe')[0].contentWindow.postMessage('hoge', '*');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>site2.tetsu.io</title>
+    <meta charset="utf-8">
+    <meta name="description" content="site2.tetsu.io">
+    <meta name="author" content="tetsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <p>in iframe page</p>
+    <script>
+      $(function() {
+        $(window).on('message', function(event) {
+          console.log(event.originalEvent);
+          window.alert(event.originalEvent.origin);
+          window.alert(JSON.stringify(event.originalEvent.data));
+        });
+      });
+    </script>
+  </body>
+</html>
